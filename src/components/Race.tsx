@@ -10,6 +10,17 @@ interface IProps {
     race: any;
 }
 
+/* Formats the time until jump
+ * @param {number} timestamp: unix timestamp in seconds
+ * @returns the time remaining until race jump in human readable format
+ */
+
+export const getFormattedTime = (timestamp: number) => {
+    const currentTime = Date.now() / 1000;
+    const remainingTime = moment.duration(currentTime - timestamp,'seconds').humanize();
+    return remainingTime;
+};
+
 /* Handles the race time and renders each race
  * @param {Object} race: Object of race data
  * @returns the race type (with an icon), race number, meeting name and time until start
@@ -17,12 +28,6 @@ interface IProps {
 
 const Race = ({race}: IProps) => {
     const raceType = raceCategories[race?.category_id];
-
-    const getFormattedTime = (timestamp: number) => {
-		const currentTime = Date.now() / 1000;
-		const remainingTime = moment.duration(currentTime - timestamp,'seconds').humanize();
-		return remainingTime;
-	};
 
 	return (
         <li className='race-list-item'>

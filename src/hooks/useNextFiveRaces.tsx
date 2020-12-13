@@ -17,7 +17,7 @@ const harness = '161d9be2-e909-4326-8c2c-35ed71fb460b';
  * @returns Array of filtered and sorted objects 
  */
 
-const getSortedNextFiveRaces = (races: any) => {
+export const getSortedNextFiveRaces = (races: any) => {
 	const sortedRaces = races.sort((a: any, b: any) => a?.advertised_start?.seconds - b?.advertised_start?.seconds);
 	return sortedRaces.slice(0,5);
 }
@@ -28,12 +28,12 @@ const getSortedNextFiveRaces = (races: any) => {
  * @returns Array of filtered and sorted objects 
  */
 
-const getFilteredRaceData = (nextFiveRaces: any, {...filterProps}) => {
+export const getFilteredRaceData = (nextFiveRaces: any, {...filterProps}) => {
 	let filteredRaces: Array<Object> = [];
 	const showHarness = filterProps?.showHarness;
 	const showHorse = filterProps?.showHorse;
 	const showGreyhound = filterProps?.showGreyhound;
-	const filteredNextFiveRaces = nextFiveRaces.filter((r:any) => r.advertised_start?.seconds + 60 > (Date.now() / 1000));
+	const filteredNextFiveRaces = nextFiveRaces.filter((r:any) => r?.advertised_start?.seconds + 60 > (Date.now() / 1000));
 	
 	if (!showHarness && !showHorse && !showGreyhound) {
 		return getSortedNextFiveRaces(filteredNextFiveRaces);
