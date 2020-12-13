@@ -84,10 +84,11 @@ const useNextFiveRaces = ({...filterProps}: IProps) => {
       console.warn(`Failed to get next five races: ${err}`);
     });
     
-	return () => {
-		mounted = false;
-	};
-}, []);
+		return () => {
+			mounted = false;
+		};
+
+	}, []);
 
 	const filteredRaceData: any = getFilteredRaceData(nextFiveRaces, {...filterProps});
 

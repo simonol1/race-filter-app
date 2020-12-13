@@ -7,7 +7,7 @@ let raceCategories: any = {
 };
 
 interface IProps {
-    race: any;
+	race: any;
 }
 
 /* Formats the time until jump
@@ -16,9 +16,9 @@ interface IProps {
  */
 
 export const getFormattedTime = (timestamp: number) => {
-    const currentTime = Date.now() / 1000;
-    const remainingTime = moment.duration(currentTime - timestamp,'seconds').humanize();
-    return remainingTime;
+	const currentTime = Date.now() / 1000;
+	const remainingTime = moment.duration(currentTime - timestamp,'seconds').humanize();
+	return remainingTime;
 };
 
 /* Handles the race time and renders each race
@@ -27,15 +27,15 @@ export const getFormattedTime = (timestamp: number) => {
  */
 
 const Race = ({race}: IProps) => {
-    const raceType = raceCategories[race?.category_id];
+	const raceType = raceCategories[race?.category_id];
 
 	return (
-        <li className='race-list-item'>
-            <span className={`race-type-icon ${raceType}`}></span>
-            <span className='race-number'>{'R' + race?.race_number}</span>
-            <span className='race-meeting-name'>{race?.meeting_name}</span>
-            <span className='race-countdown-timer'>{getFormattedTime(race?.advertised_start?.seconds)}</span>
-        </li>
+		<li className='race-list-item'>
+			<span className={`race-type-icon ${raceType}`}></span>
+			<span className='race-number'>{'R' + race?.race_number}</span>
+			<span className='race-meeting-name'>{race?.meeting_name}</span>
+			<span className='race-countdown-timer'>{getFormattedTime(race?.advertised_start?.seconds)}</span>
+		</li>
 	);
 };
 

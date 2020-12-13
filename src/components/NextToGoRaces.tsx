@@ -13,22 +13,22 @@ const NextToGoRaces = () => {
 
 	return (
 		<div className='next-to-go-races-container'>
-				<header className='next-to-go-races-header'>
-					<h3>Next 5 races</h3>
-					<RaceFilter
-						showGreyhound={showGreyhound}
-						showHarness={showHarness}
-						showHorse={showHorse}
-						setGreyhound={setShowGreyhound}
-						setHarness={setShowHarness}
-						setHorse={setShowHorse}
-					/>
-				</header>
-				<RaceList
+			<header className='next-to-go-races-header'>
+				<h3>Next 5 races</h3>
+				<RaceFilter
 					showGreyhound={showGreyhound}
 					showHarness={showHarness}
 					showHorse={showHorse}
+					setGreyhound={setShowGreyhound}
+					setHarness={setShowHarness}
+					setHorse={setShowHorse}
 				/>
+			</header>
+			<RaceList
+				showGreyhound={showGreyhound}
+				showHarness={showHarness}
+				showHorse={showHorse}
+			/>
 		</div>
 	);
 };

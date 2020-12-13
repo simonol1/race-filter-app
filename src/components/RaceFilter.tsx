@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 
 interface IProps {
-    showGreyhound: boolean;
-    showHorse: boolean;
-    showHarness: boolean;
-    setGreyhound: Function;
-    setHorse: Function;
-    setHarness: Function;
+	showGreyhound: boolean;
+	showHorse: boolean;
+	showHarness: boolean;
+	setGreyhound: Function;
+	setHorse: Function;
+	setHarness: Function;
 }
 
 /* Renders a list of buttons for filtering races
@@ -17,13 +17,13 @@ interface IProps {
 
 const RaceFilter = ({showGreyhound, showHorse, showHarness, setGreyhound, setHorse, setHarness} : IProps) => {
 
-return (
-    <div className='filter-buttons-container'>
+	return (
+		<div className='filter-buttons-container'>
 			<button onClick={() => setHorse(!showHorse)} className={clsx(`race-type-icon horse`, {'selected': showHorse})}></button>
 			<button onClick={() => setHarness(!showHarness)} className={clsx(`race-type-icon harness`, {'selected': showHarness})}></button>
 			<button onClick={() => setGreyhound(!showGreyhound)} className={clsx(`race-type-icon greyhound`, {'selected': showGreyhound})}></button>
-    </div>
-)
+		</div>
+	)
 };
 
 export default RaceFilter;
