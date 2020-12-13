@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import NextToGoRaces from './NextToGoRaces';
+import NextToGoRaces from './components/NextToGoRaces';
 
 const App = () => {
   return (

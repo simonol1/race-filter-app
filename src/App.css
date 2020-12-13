@@ -121,3 +121,13 @@ ul {
 .race-type-icon.selected svg {
   color: #fff;
 }
+
+.empty-results-container {
+  max-width: 335px;
+}
+.empty-results-container p {
+  max-width: 280px;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px; 
+}
