@@ -36,3 +36,74 @@
     transform: rotate(360deg);
   }
 }
+
+.page-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.next-to-go-races__container {
+  display: grid;
+  height: 100%;
+  justify-content: center;
+  margin-top: 50px;
+  
+}
+
+.next-to-go-races__header {
+  display: grid;
+  grid-template-columns: 1fr 80px;
+  grid-column-gap: 20px;
+  text-transform: uppercase;
+  align-items: center;
+  background-color: #232323;
+  color: #fff;
+  padding: 0 10px;
+  justify-content: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.race-list-item {
+  display: grid;
+  grid-template-columns: 40px 30px 1fr auto;
+  justify-content: center;
+  color: #232323;
+  font-size: 12px;
+  padding-right: 10px;
+  border: 1px solid #eee;
+  border-bottom: none;
+}
+
+.race-list-item:last-child {
+  border-bottom: 1px solid #eee;
+  border-radius: 0 0 5px 5px;
+}
+
+.race-number, .race-type-icon, .race-meeting-name, .race-countdown-timer {
+  padding: 10px 5px;
+}
+
+.race-number {
+  font-weight: 500;
+}
+
+.race-type-icon {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 25px;
+}
+
+.horse {
+  background-image: url('./assets/horse.svg');
+}
+.harness {
+  background-image: url('./assets/harness.svg');
+}
+.greyhound {
+  background-image: url('./assets/greyhound.svg');
+}
