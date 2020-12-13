@@ -37,29 +37,25 @@
   }
 }
 
-.page-wrapper {
-  height: 100%;
-  width: 100%;
-}
-
-.next-to-go-races__container {
+.next-to-go-races-container {
   display: grid;
   height: 100%;
   justify-content: center;
-  margin-top: 50px;
-  
+  margin-top: 50px;  
 }
 
-.next-to-go-races__header {
+.next-to-go-races-header {
   display: grid;
-  grid-template-columns: 1fr 80px;
-  grid-column-gap: 20px;
+  position: relative;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 10px;
   text-transform: uppercase;
   align-items: center;
   background-color: #232323;
   color: #fff;
   padding: 0 10px;
   justify-content: center;
+  border-radius: 5px 5px 0 0;
 }
 
 ul {
@@ -79,6 +75,10 @@ ul {
   border-bottom: none;
 }
 
+.race-list-item:hover {
+  background-color: #eee;
+}
+
 .race-list-item:last-child {
   border-bottom: 1px solid #eee;
   border-radius: 0 0 5px 5px;
@@ -90,6 +90,12 @@ ul {
 
 .race-number {
   font-weight: 500;
+}
+
+.filter-buttons-container button {
+  width: 50px;
+  height: 40px;
+  margin-left: 10px;
 }
 
 .race-type-icon {
@@ -106,4 +112,12 @@ ul {
 }
 .greyhound {
   background-image: url('./assets/greyhound.svg');
+}
+
+.selected, .filter-buttons-container button:hover {
+  background-color: #d32123;
+}
+
+.race-type-icon.selected svg {
+  color: #fff;
 }
